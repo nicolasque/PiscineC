@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 21:50:22 by nico              #+#    #+#             */
-/*   Updated: 2023/11/08 13:48:54 by nico             ###   ########.fr       */
+/*   Created: 2023/11/08 13:09:31 by nico              #+#    #+#             */
+/*   Updated: 2023/11/08 13:53:47 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	ft_iterative_factorial(int nb)
+int	ft_sqrt(int nb)
 {
-	int	result;
+	int	count;
+	int	multipli;
 
-	result = 1;
-	if (nb < 0)
-		return (0);
-	while (nb != 0)
+	multipli = 0;
+	count = 0;
+	while ((multipli * multipli) != nb)
 	{
-		result = nb * result;
-		nb--;
+		multipli *= multipli;
+		if (multipli > nb)
+			return (0);
+		count ++;
+		multipli = count;
 	}
-	return (result);
+	return (count);
 }
 
+// #include <stdio.h>
 // int main(int argc, char const *argv[])
 // {
-// 	printf("the factorial is: %d \n", ft_iterative_factorial(-5));    
-//     return 0;
+// 	printf("la raiz cuadrada des: %d \n", ft_sqrt(961));	
+// 	return 0;
 // }

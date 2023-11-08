@@ -6,7 +6,7 @@
 /*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 23:17:54 by nico              #+#    #+#             */
-/*   Updated: 2023/11/07 23:36:03 by nico             ###   ########.fr       */
+/*   Updated: 2023/11/08 13:53:16 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	ft_iterative_power(int nb, int power)
 		result = result * nb;
 		power--;
 	}
-	
 	return (result);
 }
 

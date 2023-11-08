@@ -6,7 +6,7 @@
 /*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 21:50:13 by nico              #+#    #+#             */
-/*   Updated: 2023/11/07 23:16:28 by nico             ###   ########.fr       */
+/*   Updated: 2023/11/08 13:50:47 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_recursive_factorial(int nb)
 {
 	if (nb < 0)
 		return (0);
-	if (nb  == 0)
+	if (nb == 0)
 		return (1);
 	else
 		return (nb * ft_recursive_factorial(nb - 1));
