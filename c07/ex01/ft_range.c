@@ -6,7 +6,7 @@
 /*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 18:30:57 by nico              #+#    #+#             */
-/*   Updated: 2023/11/08 19:22:41 by nico             ###   ########.fr       */
+/*   Updated: 2023/11/08 19:42:40 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ int	*ft_range(int min, int max)
 	i = 0;
 	if (max <= min)
 		return (NULL);
-	while ((i + min) < max)
-		i++;
-	printf("min: %d\n", min);
-	exit = malloc(i * sizeof(int));
+	exit = malloc((max - min) * sizeof(int));
 	i = 0;
 	while ((i + min) < max)
 	{
