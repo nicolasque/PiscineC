@@ -1,36 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 13:09:31 by nico              #+#    #+#             */
-/*   Updated: 2023/11/08 17:58:57 by nico             ###   ########.fr       */
+/*   Created: 2023/11/08 18:30:57 by nico              #+#    #+#             */
+/*   Updated: 2023/11/08 19:22:41 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
-{
-	int		count;
-	long	multipli;
+#include <stdio.h>
+#include <stdlib.h>
 
-	multipli = 0;
-	count = 0;
-	while ((multipli * multipli) != nb)
+int	*ft_range(int min, int max)
+{
+	int	i;
+	int	*exit;
+
+	i = 0;
+	if (max <= min)
+		return (NULL);
+	while ((i + min) < max)
+		i++;
+	printf("min: %d\n", min);
+	exit = malloc(i * sizeof(int));
+	i = 0;
+	while ((i + min) < max)
 	{
-		multipli *= multipli;
-		if (multipli > nb)
-			return (0);
-		count ++;
-		multipli = count;
+		*(exit + i) = (i + min);
+		i++;
 	}
-	return (count);
+	return (exit);
 }
 
-// #include <stdio.h>
 // int main(int argc, char const *argv[])
 // {
-// 	printf("la raiz cuadrada des: %d \n", ft_sqrt(2147483647));	
-// 	return 0;
+// 	ft_range(5, 10);
+// i = 0;
+// while ((i + min) < max)
+// {
+// 	printf("Numeros:  %d \n", exit[i]);
+// 	i++;
+// }
 // }
