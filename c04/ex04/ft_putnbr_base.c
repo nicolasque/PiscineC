@@ -6,7 +6,7 @@
 /*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 13:25:40 by nico              #+#    #+#             */
-/*   Updated: 2023/11/09 15:38:07 by nico             ###   ########.fr       */
+/*   Updated: 2023/11/09 16:01:57 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ void	ft_putchar(char c)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
+	int		exit_size;
 	int		i;
 	char	*exit;
 	long	long_nbr;
@@ -84,54 +85,22 @@ void	ft_putnbr_base(int nbr, char *base)
 	else
 	{
 		long_nbr = nbr;
-		exit = (char *)malloc(ft_calc_exist_sice(nbr, ft_strlen(base)) + 1);
-		exit[ft_calc_exist_sice(nbr, ft_strlen(base))] = '\0';
-		i = ft_calc_exist_sice(nbr, ft_strlen(base)) - 1;
+		exit_size = ft_calc_exist_sice(nbr, ft_strlen(base));
+		exit = (char *)malloc(exit_size + 1);
+		exit[exit_size] = '\0';
+		i = exit_size - 1;
 		if (nbr < 0)
 			long_nbr *= (-1);
 		if (nbr < 0)
 			ft_putchar('-');
 		while (long_nbr >= 0 && i >= 0)
 		{
-			exit[i] = base[long_nbr % ft_strlen(base)];
+			exit[i--] = base[long_nbr % ft_strlen(base)];
 			long_nbr /= ft_strlen(base);
-			i--;
 		}
-		write(1, exit, ft_calc_exist_sice(nbr, ft_strlen(base)));
+		write(1, exit, exit_size);
 	}
 }
-
-//LA VERSION SENSATA, QUE NO PASA NORMINETE
-// void	ft_putnbr_base(int nbr, char *base)
-// {
-// 	int		exit_size;
-// 	int		i;
-// 	char	*exit;
-// 	long	long_nbr;
-
-// 	if (ft_error_management(base))
-// 		write(1, 0, 1);
-// 	else
-// 	{
-// 		long_nbr = nbr;
-// 		exit_size = ft_calc_exist_sice(nbr, ft_strlen(base));
-// 		exit = (char *)malloc(exit_size + 1);
-// 		exit[exit_size] = '\0';
-// 		i = exit_size - 1;
-// 		if (nbr < 0)
-//		{
-// 			long_nbr *= (-1);
-// 			ft_putchar('-');
-//		}
-// 		while (long_nbr >= 0 && i >= 0)
-// 		{
-// 			exit[i] = base[long_nbr % ft_strlen(base)];
-// 			long_nbr /= ft_strlen(base);
-// 			i--;
-// 		}
-// 		write(1, exit, exit_size);
-// 	}
-// }
 
 // int main(int argc, char const *argv[])
 // {
