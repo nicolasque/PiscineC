@@ -6,7 +6,7 @@
 /*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 15:50:42 by nico              #+#    #+#             */
-/*   Updated: 2023/11/09 17:59:16 by nico             ###   ########.fr       */
+/*   Updated: 2023/11/09 19:26:50 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	ft_atoi_base(char *str, char *base)
 	int	count;
 
 	if (ft_error_management(base))
-		return (1);
+		return (NULL);
 	count = ft_strlen(str) - 1 - ft_manage_sapces(str);
 	exit = 0;
 	i = ft_manage_sapces(str);
@@ -97,9 +97,9 @@ int	ft_atoi_base(char *str, char *base)
 		i++;
 	}
 	i = 0;
-	while (*str++ != '\0')
+	while (*str != '\0')
 	{
-		if (*str == '-')
+		if (*str++ == '-')
 			exit *= (-1);
 	}
 	return (exit);
@@ -107,7 +107,7 @@ int	ft_atoi_base(char *str, char *base)
 
 // int main(int argc, char const *argv[])
 // {
-// 	printf("Exit: %d\n", ft_atoi_base("    1A3", "0123456789ABCDEF"));
+// 	printf("Exit: %d\n", ft_atoi_base("---1A3", "0123456789ABCDEF"));
 
 // 	return 0;
 // }
