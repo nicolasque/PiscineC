@@ -6,7 +6,7 @@
 /*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 23:31:36 by nico              #+#    #+#             */
-/*   Updated: 2023/11/09 19:29:56 by nico             ###   ########.fr       */
+/*   Updated: 2023/11/09 19:36:15 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	return (ft_putnbr_base(first_conversion, base_to));
 }
 
-// int main ()
-// {
-// 	printf("SALIDA: %s\n", ft_convert_base("-1A3", "0123456789ABCDEF", "01"));
-// }
+int main ()
+{
+	printf("SALIDA: %s\n", ft_convert_base("-1A3", "0123456789ABCDEF", "01"));
+}
