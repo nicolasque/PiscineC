@@ -6,7 +6,7 @@
 /*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 16:03:10 by nico              #+#    #+#             */
-/*   Updated: 2023/11/08 17:43:51 by nico             ###   ########.fr       */
+/*   Updated: 2023/11/10 19:15:45 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ int	main(int argc, char **argv)
 			swap_strings(&argv[i], &argv[i + 1]);
 			i = 1;
 		}
-		i++;
+		else
+			i++;
 	}
 	if (argc < 2)
 		return (1);
