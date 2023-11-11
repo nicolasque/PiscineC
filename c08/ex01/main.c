@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/11 17:34:02 by nico              #+#    #+#             */
-/*   Updated: 2023/11/11 18:39:51 by nico             ###   ########.fr       */
+/*   Created: 2023/11/11 18:51:44 by nico              #+#    #+#             */
+/*   Updated: 2023/11/11 19:15:21 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_div_mod(int *a, int *b)
+#include "ft_boolean.h"
+void ft_putstr(char *str)
 {
-	int	temp_a;
-
-	temp_a = *a;
-	*a = temp_a / *b;
-	*b = temp_a % *b;
+	while (*str)
+		write(1, str++, 1);
+}
+t_bool ft_is_even(int nbr)
+{
+	return ((EVEN(nbr)) ? TRUE : FALSE);
+}
+int main(int argc, char **argv)
+{
+	(void)argv;
+	if (ft_is_even(argc - 1) == TRUE)
+		ft_putstr(EVEN_MSG);
+	else
+		ft_putstr(ODD_MSG);
+	return (SUCCESS);
 }

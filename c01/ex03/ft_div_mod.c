@@ -6,12 +6,12 @@
 /*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:23:48 by nico              #+#    #+#             */
-/*   Updated: 2023/11/11 17:32:41 by nico             ###   ########.fr       */
+/*   Updated: 2023/11/11 18:40:12 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_div_mod(int a, int b, int *div, int *mod)
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
 	*div = a / b;
-	*mod = a % b; 
+	*mod = a % b;
 }

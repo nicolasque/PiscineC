@@ -6,14 +6,14 @@
 /*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 18:03:14 by nico              #+#    #+#             */
-/*   Updated: 2023/11/11 18:14:29 by nico             ###   ########.fr       */
+/*   Updated: 2023/11/11 18:38:17 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_swap(int *a, int *b)
+void	ft_swap(int *a, int *b)
 {
-	int intermediate;
-	
+	int	ntermediate;
+
 	intermediate = *a;
 	*a = *b;
 	*b = intermediate;
@@ -22,7 +22,7 @@ void ft_swap(int *a, int *b)
 void	ft_rev_int_tab(int *tab, int size)
 {
 	int	i;
-	
+
 	i = 0;
 	size--;
 	while (i < size)
