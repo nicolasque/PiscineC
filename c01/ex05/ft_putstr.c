@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 00:17:02 by nico              #+#    #+#             */
-/*   Updated: 2023/11/10 18:45:44 by nico             ###   ########.fr       */
+/*   Created: 2023/11/11 17:39:31 by nico              #+#    #+#             */
+/*   Updated: 2023/11/11 17:49:29 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_recursive_power(int nb, int power)
+#include <unistd.h>
+
+void	ft_putstr(char *str)
 {
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	else
-		return (((nb) * (ft_recursive_power(nb, (power - 1)))));
+	while (*str)
+	{
+		write(1, str++, 1);
+	}
 }
 
-// #include <stdio.h>
 // int main(int argc, char const *argv[])
 // {
-// 	printf("la potencia es: %i \n", ft_recursive_power(5, 5));
+// 	ft_putstr("hola munod\n");
 // 	return 0;
 // }

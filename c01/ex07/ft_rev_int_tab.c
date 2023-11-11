@@ -1,28 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 00:17:02 by nico              #+#    #+#             */
-/*   Updated: 2023/11/10 18:45:44 by nico             ###   ########.fr       */
+/*   Created: 2023/11/11 18:03:14 by nico              #+#    #+#             */
+/*   Updated: 2023/11/11 18:14:29 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_recursive_power(int nb, int power)
+void ft_swap(int *a, int *b)
 {
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	else
-		return (((nb) * (ft_recursive_power(nb, (power - 1)))));
+	int intermediate;
+	
+	intermediate = *a;
+	*a = *b;
+	*b = intermediate;
+}
+
+void	ft_rev_int_tab(int *tab, int size)
+{
+	int	i;
+	
+	i = 0;
+	size--;
+	while (i < size)
+		ft_swap(&tab[i++], &tab[size--]);
 }
 
 // #include <stdio.h>
 // int main(int argc, char const *argv[])
 // {
-// 	printf("la potencia es: %i \n", ft_recursive_power(5, 5));
+// 	int tab[] = {1, 2, 3, 4, 5};
+// 	int size = 5;
+// 	int i = 0;
+// 	ft_rev_int_tab(tab, size);
+// 	while (i < size)
+// 	{
+// 		printf("resultado: %i\n", tab[i]);
+// 		i++;
+// 	}
 // 	return 0;
 // }
