@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nico <nico@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/11 18:51:44 by nico              #+#    #+#             */
-/*   Updated: 2023/11/11 19:15:21 by nico             ###   ########.fr       */
+/*   Created: 2023/11/15 11:44:55 by nico              #+#    #+#             */
+/*   Updated: 2023/11/15 11:50:09 by nico             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_boolean.h"
-void ft_putstr(char *str)
+#ifndef FT_POINT_H
+# define FT_POINT_H
+
+typedef struct 
 {
-	while (*str)
-		write(1, str++, 1);
-}
-t_bool ft_is_even(int nbr)
-{
-	return ((EVEN(nbr)) ? TRUE : FALSE);
-}
-int main(int argc, char **argv)
-{
-	(void)argv;
-	if (ft_is_even(argc - 1) == TRUE)
-		ft_putstr(EVEN_MSG);
-	else
-		ft_putstr(ODD_MSG);
-	return (SUCCESS);
-}
+	int x;
+	int y;
+}t_point;
+
+#endif
